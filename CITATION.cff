@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use CRISP-Route in research, please cite this software."
+title: "CRISP-Route: Counterfactual Regime-Informed Stochastic Pathfinding"
+type: software
+authors:
+  - family-names: Curry
+    given-names: Brian
+repository-code: "https://github.com/Bodhi8/crisp-route"
+url: "https://github.com/Bodhi8/crisp-route"
+version: 0.1.0
+date-released: 2026-07-20
+license: MIT
+keywords:
+  - routing
+  - multi-objective pathfinding
+  - CVaR
+  - dynamic graphs
+  - operations research

@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crisp-route"
+version = "0.1.0"
+description = "Counterfactual Regime-Informed Stochastic Pathfinding for explainable, risk-aware routing on dynamic graphs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Brian Curry"}]
+keywords = ["routing", "shortest-path", "risk", "cvar", "multi-objective", "dynamic-graphs", "operations-research"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+  "networkx>=3.2",
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "ruff>=0.5",
+  "mypy>=1.10",
+]
+bench = [
+  "pandas>=2.0",
+  "matplotlib>=3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/Bodhi8/crisp-route"
+Repository = "https://github.com/Bodhi8/crisp-route"
+Issues = "https://github.com/Bodhi8/crisp-route/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+crisp_route = ["py.typed"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+packages = ["crisp_route"]
